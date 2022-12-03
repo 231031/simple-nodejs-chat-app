@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Amiri:wght@400;700&family=Kalam:wght@300;400;700&family=Kanit:wght@100;300;400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #56689e;
+}
+
+#form {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    height: 5rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+
+#input {
+    background: #eee;
+    height: 2rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: #424242;
+}
+
+#form button {
+    background: #4ca;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.2rem;
+    margin-top: 0.2rem;
+}
+
+#messages {
+    position: relative;
+    width: 30rem;
+    list-style-type: none;
+    z-index: 30;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+#messages li {
+    display: flex;
+    z-index: 30;
+}
+
+#messages li.right {
+    justify-content: flex-end;
+    z-index: 30;
+}
+
+#messages li span {
+    background-color: #eee;
+    color: #424242;
+    padding: 0.7rem;
+    margin: 0.5rem 1rem;
+    border-radius: 0.4rem;
+
+}
+
+#messages li.right span {
+    margin: 0.5rem 1rem;
+    border-radius: 0.4rem;
+}
+
+.background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content_button {
+    z-index: 50;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 20;
+    top: 88%;
+    left: 79%;
+    background-color: #56689e;
+    border-radius: 0.5rem;
+    opacity: 0.8;
+    width: 19.5em;
+    height: 4rem;
+}
+
+.button_bg button{
+    z-index: 60;
+    position: relative;
+    margin: 0.4rem;
+    border-radius: 0.2rem;
+    border: none;
+    width: 3rem; 
+    height: 3rem;
+    padding: 0;
+
+}
+
+#btn_bg1 img {
+    height: 3.1rem;  
+    width: 3.1rem;
+    border-radius: 0.2rem;
+}
+
+.button_bg button:hover{
+    cursor: pointer;
+    border: 0.01rem solid #FFE090;
+}
+
+.upload_icon {
+    position: absolute;
+    z-index: 60;
+    top: 89.5%;
+    left: 75%;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 2rem;
+    border: 0.02rem solid transparent;
+}
+
+.upload_icon:hover {
+    cursor: pointer;
+    border: 0.02rem solid blueviolet;
+}

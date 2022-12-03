@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LetMeSea</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <div class="contain">
+        <div class="background">
+            <img id="bg_img" src="image/sea.jpg" alt="Edit">
+        </div>
+
+        <input type="file" accept="image/*" name="image" id="file" style="display: none">
+        <label for="file"><img src="image/icon_up1.png" class="upload_icon"></label>
+
+        <div class="content_button">
+            <div class="button_bg">
+                <button onclick="change_bg(1)" id="btn_bg1"><img src="https://i.pinimg.com/originals/ef/21/20/ef212097b6111cd26f33b5373dbaf544.gif"></button>
+            </div>
+            <div class="button_bg">
+                <button onclick="change_bg(2)" id="btn_bg1"><img src="https://i.pinimg.com/originals/4e/80/38/4e8038228e029c3ddd9c7b90b293af9d.gif"></button>
+            </div>
+            <div class="button_bg">
+                <button onclick="change_bg(3)" id="btn_bg1"><img src="https://i.pinimg.com/originals/85/bf/2c/85bf2cd735d075bb9ece4be5996605b1.gif"></button>
+            </div>
+            <div class="button_bg">
+                <button onclick="change_bg(4)" id="btn_bg1"><img src="https://i.pinimg.com/originals/52/86/71/528671b25753cd9e4f5e48c1586ae88b.gif"></button>
+            </div>
+            <div class="button_bg">
+                <button onclick="change_bg(5)" id="btn_bg1"><img src="https://i.pinimg.com/originals/be/1a/33/be1a338704efc57093b6dec8e196439b.gif"></button>
+            </div>  
+        </div>
+    </div>
+
+
+
+
+
+    <ul id="messages"></ul>
+    <form action="" id="form">
+        <input type="text" id="input" autocomplete="off" placeholder="Write some message">
+        <button>send</button>
+    </form>
+
+    <script src="script.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+        const socket = io();
+        const messages = document.getElementById('messages');
+        const form = document.getElementById('form');
+        const input = document.getElementById('input');
+        const userID = Date.now();
+
+        let name = prompt("Enter your name");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            if (input.value) {
+                socket.emit("newuser", name);
+                socket.emit("chat message", {
+                    name: name,
+                    msg: input.value,
+                    user: userID
+                });
+                input.value = "";
+            }
+        })
+
+        socket.on("chat message", (msgObject) => {
+            const message = document.createElement('li');
+            const messageItem = document.createElement('span');
+            messageItem.textContent = `${msgObject.name} : ${msgObject.msg}`;
+            if (msgObject.user === userID) {
+                message.classList.add('right');
+            }
+            message.appendChild(messageItem);
+            messages.appendChild(message);
+        })
+    </script>
+</body>
+</html>
