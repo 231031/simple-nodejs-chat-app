@@ -6,14 +6,14 @@
 }
 
 body {
-    background-color: #FFE090;
+    background-color: #FFF1DC;
 }
 
 #form {
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 25rem;
+    width: 20rem;
     height: 5rem;
     left: 50%;
     transform: translate(-50%, 0);
@@ -23,7 +23,7 @@ body {
 #input {
     background: #eee;
     height: 2rem;
-    padding: 1rem;
+    padding: 1.2rem;
     border-radius: 0.5rem;
     color: #424242;
 }
@@ -33,13 +33,17 @@ body {
     color: #fff;
     border: none;
     cursor: pointer;
-    border-radius: 0.2rem;
-    margin-top: 0.2rem;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    margin-top: 0.4rem;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
 }
 
 #messages {
     position: relative;
-    width: 30rem;
+    width: 22rem;
     list-style-type: none;
     z-index: 30;
     left: 50%;
@@ -59,15 +63,21 @@ body {
 #messages li span {
     background-color: #eee;
     color: #424242;
-    padding: 0.7rem;
+    padding: 0.5rem;
     margin: 0.5rem 1rem;
-    border-radius: 0.4rem;
+    border-radius: 0.5rem;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
 
 }
 
 #messages li.right span {
     margin: 0.5rem 1rem;
-    border-radius: 0.4rem;
+    border-radius: 0.5rem;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
 }
 
 .background img {
@@ -82,18 +92,19 @@ body {
 .content_button {
     z-index: 50;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: absolute;
     z-index: 20;
-    top: 88%;
-    left: 79%;
+    top: 50%;
+    left: 30%;
+    transform: translate(0, -50%);
     background-color: #56689e;
     border-radius: 0.5rem;
     opacity: 0.8;
-    width: 19.5em;
-    height: 4rem;
+    width: 4em;
+    height: 19.5rem;
 }
 
 .button_bg button{
@@ -101,7 +112,7 @@ body {
     position: relative;
     margin: 0.4rem;
     border-radius: 0.2rem;
-    border: none;
+    border: 0.01rem transparent;
     width: 3rem; 
     height: 3rem;
     padding: 0;
@@ -122,8 +133,8 @@ body {
 .upload_icon {
     position: absolute;
     z-index: 60;
-    top: 89.5%;
-    left: 75%;
+    top: 21%;
+    left: 30.7%;
     width: 2.6rem;
     height: 2.6rem;
     border-radius: 2rem;
